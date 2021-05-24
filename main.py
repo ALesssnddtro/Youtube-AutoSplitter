@@ -7,8 +7,8 @@ from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 import re
 
-# SET YOUR OWN FILE PATH BEFORE RUNNING
-file_path = 'C://Users/win10/PycharmProjects/Auto-Splitter'
+
+file_path = os.path.abspath(os.curdir)
 
 # put your youtube link here
 video_url = "https://www.youtube.com/watch?v=3FzJHsri8Zw"
