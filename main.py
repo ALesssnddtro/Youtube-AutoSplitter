@@ -75,9 +75,8 @@ for i in titles:
 
     print(i, startTime, endTime, type(endTime))
 
-    # os commands break when inputting spaces and commas
-    file_title = i.replace("'", "")
-    file_title_dashes = file_title.replace(" ", "_")
+    # os commands break when inputting non alphabet chars
+    file_title_dashes = re.sub(r'[^A-Za-z]', '_', i)
 
     # trim audio of mp3
     os.system(f'ffmpeg -i Temp_files/Original_Video-converted.mp3 -ss {startTime} -to {endTime} -acodec copy {title_spaceless}/{file_title_dashes}.mp3')
